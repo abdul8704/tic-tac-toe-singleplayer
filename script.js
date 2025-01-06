@@ -113,27 +113,34 @@ function checkTie(board, isSimulated = false) { //similar flag of checkWinner me
 function aiMove(board, currentDifficulty) { 
     setTimeout(() => {
         let aiChoice = '';
-        if(currentDifficulty == "easy"){
+        if(currentDifficulty == "hard"){
+            aiChoice = hard_move(board);
+        }
+        else if(currentDifficulty == "easy"){
             aiChoice = easy_move(board);
         } 
         else if(currentDifficulty = "medium"){
             aiChoice = medium_move(board);
         }
-        else if(currentDifficulty == "hard"){
-            aiChoice = hard_move(board);
-        }
-
+        
+        
         let aiCell = cells[aiChoice];
         updateCell(aiCell, aiChoice);
                                  
-        checkWinner(game); // Check if AI's move resulted in a winner
+        if(checkWinner(game)== 'O'){
+            gameOver = true;
+            gameStatus.textContent = "AI wins!!";
+        } // Check if AI's move resulted in a winner
         if (!gameOver) {
             if(checkTie(game)){
                 gameOver = true;
                 gameStatus.textContent = "It's a tie!! Hit the restart button to start a new game!!";
             }
         }
-        changePlayer();
+        if(!gameOver){
+            changePlayer();
+        }
+        
         waitForAI = false; // Allow player actions
     }, 800); // Add a delay for more natural play
 }
