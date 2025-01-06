@@ -1,0 +1,125 @@
+/* Body Styling */
+body {
+    font-family: cursive, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #fff9c4, #ffe082);
+    color: #333;
+}
+
+/* Game Wrapper */
+#mainWrapper {
+    position: relative;
+}
+
+/* Game Container */
+#gameContainer {
+    background-color: #fff59d;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+/* Title Styling */
+h1 {
+    margin: 0 0 20px;
+    font-size: 2em;
+    color: #aa830f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown Styling */
+#dropdownWrapper {
+    position: absolute;
+    top: 5px;
+    right: -160px;
+    /* Position dropdown outside container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+#dropdownLabel {
+    
+    font-size: 1em;
+    color: #aa830f;
+}
+
+#difficultySelector {
+    padding: 5px;
+    font-size: 1em;
+    background-color: #ffee58;
+    border: 2px solid #fdd835;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Cell Container */
+#cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    gap: 10px;
+    justify-content: center;
+    margin: 10px auto 20px;
+}
+
+/* Cell Styling */
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #fdd835;
+    background-color: #ffee58;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    line-height: 75px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+    border-radius: 5px;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+/* Status Text */
+#statusText {
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #444;
+}
+
+/* Restart Button */
+#restartBtn {
+    background-color: #ffca28;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#restartBtn:hover {
+    background-color: #fbc02d;
+    transform: scale(1.05);
+}
+
+#restartBtn:active {
+    background-color: #f57f17;
+}
+
+.winner {
+    background-color: rgb(27, 192, 27);
+}
