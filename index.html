@@ -9,6 +9,14 @@
 </head>
 <body>
     <div id="mainWrapper">
+        <div id="dropdownWrapper">
+            <label id="dropdownLabel" for="difficultySelector">Select Difficulty:</label>
+            <select id="difficultySelector" onchange="changeDifficulty()">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
         <div id="gameContainer">
             <h1>Tic Tac Toe</h1>
             <div id="cellContainer">
@@ -25,14 +33,7 @@
             <h2 id="statusText"></h2>
             <button id="restartBtn" onclick="startGame()">Restart</button>
         </div>
-        <div id="dropdownWrapper">
-            <label id="dropdownLabel" for="difficultySelector">Select Difficulty:</label>
-            <select id="difficultySelector" onchange="changeDifficulty()">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </div>
+       
     </div>
 
     <script src="script.js"></script>
