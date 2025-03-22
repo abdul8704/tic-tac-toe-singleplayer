@@ -113,16 +113,17 @@ function checkTie(board, isSimulated = false) { //similar flag of checkWinner me
 function aiMove(board, currentDifficulty) { 
     setTimeout(() => {
         let aiChoice = '';
-        if(currentDifficulty == "hard"){
+        if(currentDifficulty === "hard"){
             aiChoice = hard_move(board);
         }
-        else if(currentDifficulty == "easy"){
+        else if(currentDifficulty === "easy"){
             aiChoice = easy_move(board);
         } 
-        else if(currentDifficulty = "medium"){
+        else if(currentDifficulty === "medium"){
             aiChoice = medium_move(board);
         }
         
+        console.log(easy_move(board), medium_move(board), hard_move(board));
         
         let aiCell = cells[aiChoice];
         updateCell(aiCell, aiChoice);
